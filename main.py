@@ -1,2 +1,2 @@
-def say_hello(name, city, state):
-    return "Hello, {}! Welcome to {}, {}!".format(" ".join(name), city, state)
+def filter_list(l):
+    return [i for i in l if not isinstance(i, str)]
