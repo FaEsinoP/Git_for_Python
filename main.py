@@ -1,6 +1,2 @@
-import os
-
-say = input()
-
-os.system('start ' + say)
-print('elif')
+def say_hello(name, city, state):
+    return "Hello, {}! Welcome to {}, {}!".format(" ".join(name), city, state)
