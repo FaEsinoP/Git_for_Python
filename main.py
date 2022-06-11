@@ -1,8 +1,10 @@
-def in_array(array1, array2):
-    arr = []
-    for i in array1:
-        for j in array2:
-            if i not in arr and i in j:
-                arr.append(i)
-    arr.sort()
-    return arr
+def spin_words(sentence):
+    arr = sentence.split(" ")
+    new = []
+    for word in arr:
+        if len(word) >= 5:
+            new.append(word[::-1])
+        else:
+            new.append(word)
+    string = " ".join(new)
+    return string
