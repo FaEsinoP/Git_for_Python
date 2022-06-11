@@ -1,13 +1,8 @@
-def number_of_pairs(gloves):
-    arr = {}
-    count = 0
-    for i in range(len(gloves)):
-        for j in range(i, len(gloves)):
-            if gloves[i] == gloves[j]:
-                count += 1
-        if gloves[i] not in arr:
-            arr[gloves[i]] = count
-        count = 0
-    for i in arr:
-        count += arr[i] // 2
-    return (count)
+def in_array(array1, array2):
+    arr = []
+    for i in array1:
+        for j in array2:
+            if i not in arr and i in j:
+                arr.append(i)
+    arr.sort()
+    return arr
