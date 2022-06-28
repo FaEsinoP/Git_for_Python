@@ -1,17 +1,42 @@
-def binary_search(A: list, item):
-    height = len(A)
-    low = 0
-    while height >= low:
-        mid = (height + low) // 2
-        if A[mid] == item:
-            return mid
-        if A[mid] > item:
-            height = mid - 1
-        else:
-            low = mid + 1
-    return None
+def indexedSequentialSearch(arr, n, k):
+    elements = [0] * 20
+    indices = [0] * 20
+
+    ind = 0
+
+    for i in range(0, n, 3):
+        # Элемент хранения
+
+        elements[ind] = arr[i]
+
+        # Хранение индекса
+
+        indices[ind] = i
+
+        ind += 1
+
+    if k < elements[0]:
+
+        print("Not found")
+
+        exit(0)
+
+    else:
+        for i in range(1, ind + 1):
+            if k < elements[i]:
+                start = indices[i - 1]
+                end = indices[i]
+                break
+
+    for i in range(start, end + 1):
+        if k == arr[i]:
+            print("Found at index", i)
+            break
 
 
-A = [10, 20, 30, 40, 54]
+if __name__ == "__main__":
+    arr = [1, 2, 3, 4, 5, 6, 7]
+    n = len(arr)
+    k = 4
 
-print(binary_search(A, 40))
+    indexedSequentialSearch(arr, n, k)
