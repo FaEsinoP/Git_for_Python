@@ -1,42 +1,16 @@
-def indexedSequentialSearch(arr, n, k):
-    elements = [0] * 20
-    indices = [0] * 20
+class Car:
+    def __init__(self, everage, h, w):
+        self.everage_speed = everage
+        self.height = h
+        self.weight = w
 
-    ind = 0
+    def start_engine(self):
+        print("RrrRRRrRRrr!")
 
-    for i in range(0, n, 3):
-        # Элемент хранения
-
-        elements[ind] = arr[i]
-
-        # Хранение индекса
-
-        indices[ind] = i
-
-        ind += 1
-
-    if k < elements[0]:
-
-        print("Not found")
-
-        exit(0)
-
-    else:
-        for i in range(1, ind + 1):
-            if k < elements[i]:
-                start = indices[i - 1]
-                end = indices[i]
-                break
-
-    for i in range(start, end + 1):
-        if k == arr[i]:
-            print("Found at index", i)
-            break
+    def show_max_speed(self, everage_speed):
+        print(f"Max_speed: {everage_speed * 2} км/c")
 
 
-if __name__ == "__main__":
-    arr = [1, 2, 3, 4, 5, 6, 7]
-    n = len(arr)
-    k = 4
-
-    indexedSequentialSearch(arr, n, k)
+mustang = Car(1, 1, 1)
+mustang.start_engine()
+mustang.show_max_speed(mustang.everage_speed)
