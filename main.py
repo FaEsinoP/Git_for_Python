@@ -1,17 +1,14 @@
-chislo = input()
-arr = list(chislo)
-numbers = arr[-5:]
-numbers.reverse()
-answer = []
-if len(arr) == 5:
-    arr = []
-else:
-    arr = arr[0]
-
-for i in range(len(arr)):
-    answer.append(arr[i])
-for i in range(len(numbers)):
-    answer.append(numbers[i])
-while answer[0] == str(0):
-    answer.pop(0)
-print("".join(answer))
+word = input().replace(" ", "")
+my_list = []
+my_tmp_list = []
+my_tmp_list.append(word[0])
+for bukva in range(1, len(word)):
+    if word[bukva] == word[bukva - 1]:
+        my_tmp_list.append(word[bukva])
+    else:
+        my_list.append(my_tmp_list.copy())
+        my_tmp_list.clear()
+        my_tmp_list.append(word[bukva])
+    if bukva == len(word) - 1:
+       my_list.append(my_tmp_list.copy())
+print(my_list)
