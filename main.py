@@ -1,14 +1,9 @@
-word = input().replace(" ", "")
-my_list = []
-my_tmp_list = []
-my_tmp_list.append(word[0])
-for bukva in range(1, len(word)):
-    if word[bukva] == word[bukva - 1]:
-        my_tmp_list.append(word[bukva])
-    else:
-        my_list.append(my_tmp_list.copy())
-        my_tmp_list.clear()
-        my_tmp_list.append(word[bukva])
-    if bukva == len(word) - 1:
-       my_list.append(my_tmp_list.copy())
-print(my_list)
+arr = input().split()
+result = [[]]
+for i in range(1, len(arr)+1):
+    for j in range(len(arr)):
+        if j == 0:
+            result.append(list(arr[j:i * 1]))
+        elif len(list(arr[j:i + j])) == i:
+            result.append(list(arr[j:i + j]))
+print(result)
