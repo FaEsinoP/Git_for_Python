@@ -1,12 +1,12 @@
 n = int(input())
-matrix = [[0 for i in range(n)] for _ in range(n)]
-for i in range(n):
-    for j in range(n):
-        for k in range(1, n):
-            if i == j and j < n - k and i < n - k:
-                matrix[i + k][j] = k
-                matrix[i][j + k] = k
-for i in range(n):
-    for j in range(n):
-        print(matrix[i][j], end=" ")
-    print()
+m = int(input())
+k = int(input())
+x = int(input())
+y = int(input())
+z = int(input())
+t = int(input())
+a = int(input())
+print(n - t - (z - (z - n) - (z - k) - t) - (m - (x - n) - t) + m - t - (m - (x - n) - t) - (
+        x - (y - k) - (x - m) - t) + k - t - (z - (z - n) - (z - k) - t) - (x - (y - k) - (x - m) - t))
+print((z - (z - n) - (z - k) - t) + (m - (x - n) - t) + (x - (y - k) - (x - m) - t))
+print(a - y - (n - t - (z - (z - n) - (z - k) - t) - (m - (x - n) - t)))
