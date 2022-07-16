@@ -1,12 +1,11 @@
 n = int(input())
-m = int(input())
-k = int(input())
-x = int(input())
-y = int(input())
-z = int(input())
-t = int(input())
-a = int(input())
-print(n - t - (z - (z - n) - (z - k) - t) - (m - (x - n) - t) + m - t - (m - (x - n) - t) - (
-        x - (y - k) - (x - m) - t) + k - t - (z - (z - n) - (z - k) - t) - (x - (y - k) - (x - m) - t))
-print((z - (z - n) - (z - k) - t) + (m - (x - n) - t) + (x - (y - k) - (x - m) - t))
-print(a - y - (n - t - (z - (z - n) - (z - k) - t) - (m - (x - n) - t)))
+arr = []
+for i in range(n):
+    myset = set()
+    for j in range(int(input())):
+        myset.add(input())
+    arr.append(myset)
+for i in arr:
+    arr[0].intersection_update(i)
+for i in sorted(arr[0]):
+    print(i)
