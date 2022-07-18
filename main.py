@@ -1,18 +1,17 @@
-secret = input()
-dict_secret = {}
-for i in secret:
-    dict_secret[i] = dict_secret.get(i, 0) + 1
+lst = [input() for _ in range(int(input()))]
 
-mydict = {}
-n = int(input())
-for _ in range(n):
-    key, value = input().split(": ")
-    mydict[key] = value
-answer = ""
-for i in range(len(secret)):
-    for key, value in dict_secret.items():
-        for key2, value2 in mydict.items():
-            if int(value2) == value:
-                if secret[i] == key:
-                    answer += key2
-print(answer)
+d1 = {}
+for i in lst:
+    a, b, c = i.split()[0], i.split()[1], int(i.split()[2])
+    if a not in d1:
+        d1[a] = d1.setdefault(a, {b: c})
+    else:
+        if b not in d1[a]:
+            d1[a].update({b: c})
+        else:
+            d1[a][b] = d1[a].get(b) + c
+
+for bigKeys, bigValues in sorted(d1.items()):
+    print(bigKeys + ":")
+    for keys, values in sorted(bigValues.items()):
+        print(keys, values)
