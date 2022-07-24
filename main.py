@@ -1,33 +1,11 @@
-numbers = [77, 293, 28, 242, 213, 285, 71, 286, 144, 276, 61, 298, 280, 214, 156, 227, 228, 51, -4, 202, 58, 99, 270,
-           219, 94, 253, 53, 235, 9, 158, 49, 183, 166, 205, 183, 266, 180, 6, 279, 200, 208, 231, 178, 201, 260, -35,
-           152, 115, 79, 284, 181, 92, 286, 98, 271, 259, 258, 196, -8, 43, 2, 128, 143, 43, 297, 229, 60, 254, -9, 5,
-           187, 220, -8, 111, 285, 5, 263, 187, 192, -9, 268, -9, 23, 71, 135, 7, -161, 65, 135, 29, 148, 242, 33, 35,
-           211, 5, 161, 46, 159, 23, 169, 23, 172, 184, -7, 228, 129, 274, 73, 197, 272, 54, 278, 26, 280, 13, 171, 2,
-           79, -2, 183, 10, 236, 276, 4, 29, -10, 41, 269, 94, 279, 129, 39, 92, -63, 263, 219, 57, 18, 236, 291, 234,
-           10, 250, 0, 64, 172, 216, 30, 15, 229, 205, 123, -105]
+with open(input(), 'r', encoding="utf-8") as f:
+    definition = []
+    file = f.readlines()
+    for i in range(len(file)):
+        if file[i][:4] == 'def ' and (i == 0 or file[i - 1][0] != '#'):
+            definition.append(file[i][4:file[i].find('(')])
 
-
-def map(function, items):
-    result = []
-    for item in items:
-        result.append(function(item))
-    return result
-
-
-def filter(function, items):
-    result = []
-    for item in items:
-        if function(item):
-            result.append(item)
-    return result
-
-
-def determinate(num):
-    return len(str(num)) == 2 and num % 7 == 0
-
-
-def square(num):
-    return num ** 2
-
-
-print(sum(map(square, filter(determinate, numbers))))
+    for i in definition:
+        print(i)
+    if len(definition) == 0:
+        print("Best Programming Team")
